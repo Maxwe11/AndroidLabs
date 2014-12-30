@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:paddingLeft="10px" android:paddingRight="10px" android:onClick="onNextActivityBtnClicked">
+
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Next activity"
+            android:id="@+id/next_activity_btn" android:layout_gravity="center"
+            android:onClick="onNextActivityBtnClicked"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Finish activity"
+            android:id="@+id/finish_activity_btn" android:layout_gravity="center"
+            android:onClick="onFinishActivityBtnClicked"/>
+</LinearLayout>
+

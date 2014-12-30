@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Main</title>
+</head>
+<body>
+<script type="text/javascript">
+function createRequestObject() {
+  if (typeof XMLHttpRequest === 'undefined') {
+    XMLHttpRequest = function() {
+      try { return new ActiveXObject("Msxml2.XMLHTTP.6.0"); }
+        catch(e) {}
+      try { return new ActiveXObject("Msxml2.XMLHTTP.3.0"); }
+        catch(e) {}
+      try { return new ActiveXObject("Msxml2.XMLHTTP"); }
+        catch(e) {}
+      try { return new ActiveXObject("Microsoft.XMLHTTP"); }
+        catch(e) {}
+      throw new Error("This browser does not support XMLHttpRequest.");
+    };
+  }
+  return new XMLHttpRequest();
+}
+
+
+function loadText(key) {
+    if (xhr !=null) {    
+        xhr.open("POST", "http://localhost:8080/getter.php", true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    document.getElementById("id1").innerHTML = xhr.responseText;          
+                } else {
+                    alert("Не удалось получить данные:\n" +
+                        xhr.statusText);
+                };
+            };
+        };
+        var params = "param=just"+key;
+        xhr.setRequestHeader("Pragma", "no-cache");
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("Content-length", params.length);
+        xhr.setRequestHeader("Connection", "close");     
+        xhr.send(params);
+    }
+}
+
+function loadHTMLText(key) {
+    if (xhr !=null) {
+        xhr.open("GET", "http://localhost:8080/getter.php?param=html"+key, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    document.getElementById("id1").innerHTML = xhr.responseText;          
+                } else {
+                    alert("Не удалось получить данные:\n" +
+                        xhr.statusText);
+                };
+            };
+        };
+        xhr.setRequestHeader("Pragma", "no-cache");
+        xhr.send(null);
+    }
+}
+
+function loadJSCode(key) {
+    if (xhr !=null) {
+        xhr.open("GET", "http://localhost:8080/getter.php?param=js"+key, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    eval(xhr.responseText);          
+                } else {
+                    alert("Не удалось получить данные:\n" +
+                        xhr.statusText);
+                };
+            };
+        };
+        xhr.setRequestHeader("Pragma", "no-cache");
+        xhr.send(null);
+    }
+}
+
+function loadJSON(key) {
+    if (xhr !=null) {
+        xhr.open("GET", "http://localhost:8080/getter.php?param=json"+key, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    var obj = eval("(" + xhr.responseText + ")"); 
+                    if (obj.type == 1) 
+                        document.getElementById("id1").innerHTML = obj.greeting.text + " " + obj.name + " " + obj.surname;    
+                    if (obj.type == 2) {
+                        var string = "";
+                        for (var i = 0; i < obj.greeting.length; ++i)
+                            string += obj.greeting[i];
+                        document.getElementById("id1").innerHTML = string + " " + obj.name + " " + obj.surname;  
+                    } 
+                } else {
+                    alert("Не удалось получить данные:\n" +
+                        xhr.statusText);
+                };
+            };
+        };
+        xhr.setRequestHeader("Pragma", "no-cache");
+        xhr.send(null);
+    }
+}
+
+var xhr = createRequestObject();
+
+var string = Android.getString("text");
+alert(string);
+</script>
+<a href="http://localhost:8080/getter.php?param=justhi">Local</a>
+<a href="http://ua.fm">Web</a>
+<div id="id1"></div>
+<input id="key" type="text" size="40"/>
+<input type="submit" value="Получить текст" onclick="loadText(document.getElementById('key').value);"/>
+<input type="submit" value="Получить html" onclick="loadHTMLText(document.getElementById('key').value);"/>
+<input type="submit" value="Получить js код" onclick="loadJSCode(document.getElementById('key').value);"/>
+<input type="submit" value="Получить json" onclick="loadJSON(document.getElementById('key').value);"/>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+    <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="300dp"
+            android:id="@+id/dbListView">
+    </ListView>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Add person"
+            android:id="@+id/button" android:layout_alignParentLeft="true" android:layout_marginLeft="20dp"
+            android:layout_alignParentTop="true" android:layout_marginTop="310dp" android:layout_marginRight="20dp"
+            android:onClick="onAddPerson"/>
+</RelativeLayout>

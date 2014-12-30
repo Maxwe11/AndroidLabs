@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_gravity="center">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: "
+                android:id="@+id/textView" android:layout_gravity="center_horizontal|top"/>
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameEditText" android:layout_gravity="center_horizontal|top"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age:     "
+                android:id="@+id/textView1" android:layout_gravity="center_horizontal|top"/>
+        <EditText android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/ageEditText"
+                />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                  android:layout_height="wrap_content" android:id="@+id/linearLayout1">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Prof:    "
+                  android:id="@+id/textView2" android:layout_gravity="center_horizontal|top"/>
+        <EditText android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/profEditText"
+                  android:editable="false"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                  android:layout_height="wrap_content" android:id="@+id/linearLayout">
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Update"
+                android:id="@+id/button" android:onClick="onUpdate" android:enabled="true"/>
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Insert"
+                android:id="@+id/button1" android:onClick="onInsert"/>
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Delete"
+                android:id="@+id/button2" android:onClick="onDelete"/>
+    </LinearLayout>
+</LinearLayout>

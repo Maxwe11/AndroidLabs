@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>
+^^
+</title>
+</head>
+<body>
+<script type="text/javascript">
+	function saveGP(text) {
+		android.saveGP(text);
+	}
+	
+	function loadGP() {
+		return android.loadGP();
+	}
+	
+	function saveGSP(text) {
+		android.saveGSP(text);
+	}
+	
+	function loadGSP() {
+		return android.loadGSP();
+	}
+	
+	function loadActivity() {
+		android.loadActivity();
+	}
+	
+	function saveFile(text) {
+		android.saveFile(text);
+	}
+	
+	function loadFile() {
+		return android.loadFile();
+	}
+	
+	function saveFileSD(text) {
+		android.saveFileSD(text);
+	}
+	
+	function loadFileSD() {
+		return android.loadFileSD();
+	}
+	
+</script>
+
+<input id="key" type="text" size="40"/>
+
+getPreference <br>
+<input type="submit" value="Save" onclick="saveGP(document.getElementById('key').value);"/>
+<input type="submit" value="Load" onclick="document.getElementById('key').value = loadGP();"/> <br>
+
+getSharedPreference <br>
+<input type="submit" value="Save" onclick="saveGSP(document.getElementById('key').value);"/>
+<input type="submit" value="Load" onclick="document.getElementById('key').value = loadGSP();"/>
+<input type="submit" value="Load activity" onclick="loadActivity();"/> <br>
+
+file <br>
+<input type="submit" value="Save" onclick="saveFile(document.getElementById('key').value);"/>
+<input type="submit" value="Load" onclick="document.getElementById('key').value = loadFile();"/> <br>
+
+fileSD <br>
+<input type="submit" value="Save" onclick="saveFileSD(document.getElementById('key').value);"/>
+<input type="submit" value="Load" onclick="document.getElementById('key').value = loadFileSD();"/> <br>
+</body>
+</html>

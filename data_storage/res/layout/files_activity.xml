@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText" android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
+            android:layout_marginTop="19dp"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Write"
+            android:id="@+id/button"
+            android:layout_alignLeft="@+id/editText" android:layout_below="@+id/button1" android:onClick="writeToFile"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Read"
+            android:id="@+id/button1"
+            android:layout_alignParentLeft="true" android:layout_marginLeft="-2dp"
+            android:layout_alignParentTop="true" android:onClick="readFromFile"/>
+</LinearLayout>

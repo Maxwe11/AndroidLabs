@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_gravity="center_horizontal|bottom">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1" android:layout_gravity="center_horizontal|top" android:text="@string/Key"
+                android:width="40dp"/>
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/keyEditText" android:layout_gravity="center_horizontal|top"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_gravity="center">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Value"
+                android:id="@+id/textView" android:layout_gravity="center_horizontal|top" android:width="40dp"/>
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/valueEditText" android:layout_gravity="center_horizontal|top"/>
+    </LinearLayout>
+    <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/ValueTypes"
+            android:id="@+id/valueTypeSpinner"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Add"
+            android:id="@+id/button" android:onClick="onAddKeyValueBtnClick"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/NextAct"
+            android:id="@+id/button1" android:onClick="onNextActivityBtnClick"/>
+</LinearLayout>

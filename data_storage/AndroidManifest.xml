@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.data_storage"
+          android:versionCode="1"
+          android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="17"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
+        <activity android:name=".com.example.data_storage.activity.AddPreferencesActivity"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".com.example.data_storage.activity.ViewPreferencesActivity"/>
+        <activity android:name=".com.example.data_storage.activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".com.example.data_storage.activity.FilesActivity"/>
+        <activity android:name=".com.example.data_storage.activity.DbViewActivity"/>
+        <activity android:name=".com.example.data_storage.activity.PersonMapperActivity"/>
+    </application>
+</manifest>

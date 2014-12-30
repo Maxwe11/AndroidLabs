@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ui_multiple_activities</string>
+    <string name="main_activity_title">Activity selector</string>
+    <string name="radio_btn_text1">Notifications</string>
+    <string name="radio_btn_text2">Controls</string>
+    <string name="run_activity_btn_text">Run Activity</string>
+    <string name="show_msg_box_btn_text">Message box</string>
+    <string name="show_toast_btn_text">Toast</string>
+    <string name="run_btn_text">Test</string>
+
+    <string-array name="test_array">
+        <item>foo</item>
+        <item>bar</item>
+        <item>spam</item>
+        <item>eggs</item>
+        <item>hello</item>
+        <item>world</item>
+    </string-array>
+</resources>

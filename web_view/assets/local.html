@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function onGoToOutside() {
+            window.location.href = "http://kpi.ua";
+        }
+
+        function onGoToMyPage() {
+            window.location.href = "http://10.0.2.2:8080";
+        }
+
+        function onShowToastButton() {
+            var text = document.getElementById('in').value;
+            //alert(text);
+            myAndroid.showToast(text);
+        }
+
+        function onShowAlertButton() {
+            alert(myAndroid.getRandomString());
+        }
+    </script>
+</head>
+<body>
+    <button onclick="onGoToOutside()">go to outside</button>
+    <br>
+    <button onclick="onGoToMyPage()">go to my page</button>
+    <br>
+    <input id="in" type="time"/>
+    <br>
+    <button onclick="onShowToastButton()">show toast</button>
+    <br>
+    <button onclick="onShowAlertButton()">show alert</button>
+    <br>
+</body>
+</html>

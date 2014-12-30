@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">data_storage</string>
+    <string name="Key">Key:</string>
+    <string name="Value">Value:</string>
+    <string name="Add">Add</string>
+    <string name="NextAct">Next activity</string>
+
+    <string-array name="ValueTypes">
+        <item>Integer</item>
+        <item>Float</item>
+        <item>String</item>
+    </string-array>
+</resources>
